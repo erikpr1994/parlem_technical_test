@@ -25,10 +25,11 @@ export function ClientFactory(sequelize: Sequelize): ClientStatic {
   return <ClientStatic>sequelize.define('clients', {
     _id: {
       type: DataTypes.INTEGER,
-      primaryKey: true,
+      autoIncrement: true,
     },
     customerId: {
       type: DataTypes.INTEGER,
+      primaryKey: true,
     },
     docType: {
       type: DataTypes.STRING,

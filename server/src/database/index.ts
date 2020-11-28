@@ -2,8 +2,8 @@ import { Sequelize } from 'sequelize';
 
 import { config } from 'dotenv';
 
-import { ClientFactory } from './client';
-import { ProductFactory } from './product';
+import { ClientFactory } from '../clients/clientModel';
+import { ProductFactory } from '../products/productModel';
 
 config();
 

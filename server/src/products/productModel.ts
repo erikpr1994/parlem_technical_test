@@ -5,6 +5,7 @@ export interface ProductAttributes {
   productName: string;
   productTypeName: string;
   numeracioTerminal: number;
+  customerId: number;
   soldAt: Date;
 }
 

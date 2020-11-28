@@ -4,7 +4,7 @@ import cors from 'cors';
 
 import router from './router';
 
-import { database } from './models';
+import { database } from './database';
 
 config();
 
