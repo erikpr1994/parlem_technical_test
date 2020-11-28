@@ -7,7 +7,8 @@
     "start": "npm run build && node build/index.js",
     "start:db": "docker-compose up",
     "start:dev": "nodemon",
-    "build": "rimraf ./build && tsc"
+    "build": "rimraf ./build && tsc",
+    "syncDB": "ts-node src/scripts/syncDatabase.ts"
   },
   "keywords": [],
   "author": "",
