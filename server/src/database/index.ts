@@ -28,4 +28,3 @@ export const Client = ClientFactory(database);
 export const Product = ProductFactory(database);
 
 Client.hasMany(Product, { foreignKey: 'customerId' });
-Product.belongsTo(Client);
