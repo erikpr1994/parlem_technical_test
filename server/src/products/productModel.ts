@@ -24,6 +24,7 @@ export function ProductFactory(sequelize: Sequelize): ProductStatic {
     _id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
+      autoIncrement: true,
     },
     productName: {
       type: DataTypes.STRING,
