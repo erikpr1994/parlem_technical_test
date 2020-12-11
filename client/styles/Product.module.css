@@ -1,0 +1,13 @@
+.product {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 300px 200px;
+}
+
+.wrapper_dates {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  place-items: center;
+  grid-column: 1/-1;
+}
