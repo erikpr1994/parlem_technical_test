@@ -1,0 +1,37 @@
+version: "3.7"
+services:
+  db:
+    image: postgres
+    env_file: ./server/.env
+    ports:
+      - "5432:5432"
+    networks:
+      - parlem
+  parlem-server:
+    build: server
+    ports:
+      - "4000:4000"
+    command: npm run start:dev
+    networks:
+      - parlem
+    depends_on:
+      - db
+    volumes:
+      - ./server:/home/node/server/
+      - /home/node/server/node_modules
+  parlem-client:
+    build: client
+    command: npm run dev
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    depends_on:
+      - parlem-server
+    volumes:
+      - ./client:/home/node/client
+      - /home/node/client/node_modules
+    networks:
+      - parlem
+networks:
+  parlem:
+    driver: bridge

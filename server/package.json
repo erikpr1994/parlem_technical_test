@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run build && node build/index.js",
     "start:db": "docker-compose up",
-    "start:dev": "nodemon",
+    "start:dev": "npm run syncDB && nodemon",
     "build": "rimraf ./build && tsc",
     "syncDB": "ts-node src/scripts/syncDatabase.ts"
   },
