@@ -10,7 +10,7 @@ export type ClientStatic = typeof Model & {
 };
 
 export function ClientFactory(sequelize: Sequelize): ClientStatic {
-  return <ClientStatic>sequelize.define('clients', {
+  return sequelize.define('clients', {
     _id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,

@@ -1,24 +1,15 @@
-import Express, { json } from 'express';
+import Express from 'express';
+
 import { config } from 'dotenv';
-import cors from 'cors';
 
-import router from './router';
+async function startServer() {
+  config();
+  const { PORT } = process.env;
 
-import { database } from './database';
+  const app = Express();
+  await require('./loaders').default({ expressApp: app });
 
-config();
+  app.listen(PORT, () => {});
+}
 
-const { PORT } = process.env;
-
-const app = Express();
-
-app.use(cors());
-app.use(json());
-app.use(router);
-
-database
-  .authenticate()
-  .then(() => app.listen(PORT))
-  .catch((error) => {
-    throw new Error(error);
-  });
+startServer();
