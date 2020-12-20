@@ -1,23 +1,23 @@
 export type tClient = {
   createdAt: Date;
-  customerId: Number;
+  customerId: number;
   docNum: String;
   docType: String;
   email: String;
   familyName1: String;
   givenName: String;
-  phone: Number;
+  phone: number;
   products: tProduct[];
   updatedAt: Date;
-  _id: Number;
+  _id: number;
 };
 export type tProduct = {
   createdAt: Date;
-  customerId: Number;
-  numeracioTerminal: Number;
+  customerId: number;
+  numeracioTerminal: number;
   productName: String;
   productTypeName: String;
   soldAt: Date;
   updatedAt: Date;
-  _id: Number;
+  _id: number;
 };
