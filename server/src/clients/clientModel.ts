@@ -1,21 +1,9 @@
 import { BuildOptions, DataTypes, Model, Sequelize } from 'sequelize';
+import { Iclient } from '../interfaces/Iclient';
 
-export interface ClientAttributes {
-  _id: number;
-  customerId: number;
-  docType: string;
-  docNum: string;
-  email: string;
-  givenName: string;
-  familyName1: string;
-  phone: number;
-}
+export interface ClientModel extends Model<Iclient>, Iclient {}
 
-export interface ClientModel
-  extends Model<ClientAttributes>,
-    ClientAttributes {}
-
-export class Client extends Model<ClientModel, ClientAttributes> {}
+export class Client extends Model<ClientModel, Iclient> {}
 
 export type ClientStatic = typeof Model & {
   new (Values?: object, options?: BuildOptions): ClientModel;

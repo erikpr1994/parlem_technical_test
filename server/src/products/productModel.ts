@@ -1,19 +1,9 @@
 import { BuildOptions, DataTypes, Model, Sequelize } from 'sequelize';
+import { Iproduct } from '../interfaces/Iproduct';
 
-export interface ProductAttributes {
-  _id: number;
-  productName: string;
-  productTypeName: string;
-  numeracioTerminal: number;
-  customerId: number;
-  soldAt: Date;
-}
+export interface ProductModel extends Model<Iproduct>, Iproduct {}
 
-export interface ProductModel
-  extends Model<ProductAttributes>,
-    ProductAttributes {}
-
-export class Product extends Model<ProductModel, ProductAttributes> {}
+export class Product extends Model<ProductModel, Iproduct> {}
 
 export type ProductStatic = typeof Model & {
   new (Values?: object, options?: BuildOptions): ProductModel;
