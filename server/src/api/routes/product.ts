@@ -16,7 +16,7 @@ export default (app: Router) => {
       const productServiceInstance = new ProductService(product);
 
       const user = await productServiceInstance.getProductsFromClient(
-        Number(req.params.id)
+        Number(req.params.userId)
       );
 
       return res.json(user).status(200);
