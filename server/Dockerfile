@@ -1,6 +1,10 @@
 FROM node:latest
 
+RUN apt update && apt install vim inotify-tools -y
+
 RUN npm i -g nodemon
+
+EXPOSE 49153
 
 RUN mkdir /home/node/server
 

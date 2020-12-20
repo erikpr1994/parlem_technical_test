@@ -1,5 +1,7 @@
 FROM node:latest
 
+RUN apt update && apt install vim inotify-tools -y
+
 USER node
 
 RUN mkdir /home/node/client
